@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <link rel="stylesheet" href="../CSS/home.css"/>
+</head>
+
+<body>
+
+    <div id="formularInscriere" class="modal">
+
+        <form class="modal-content animate" action="">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('formularInscriere').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="containerSign">
+                <label for="firstname"><b>First Name</b></label><br>
+                <input v-model="inpSignUp.FirstName" type="text" placeholder="Enter your first name" name="firstname" required><br>
+
+                <label for="lastname"><b>Last Name</b></label><br>
+                <input v-model="inpSignUp.LastName" type="text" placeholder="Enter your last name" name="lastname" required><br>
+
+                <label for="mail"><b>Email</b></label><br>
+                <input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" name="mail" required><br>
+
+                <label><b>Cover</b><br>
+                <input type="file" accept="image/*" @change="bookImageUpload"></label><br>
+
+                <!--<label><b>First Name</b><input v-model="inpSignUp.FirstName" type="text" placeholder="Enter your first name" required></label>-->
+
+
+                <!--<label><b>Last Name</b><input v-model="inpSignUp.LastName" type="text" placeholder="Enter your last name" required></label>-->
+
+
+                <!--<label ><b>Email</b><input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" required></label>-->
+
+
+                <button onclick="document.getElementById('speechRecognition').style.display='block'">Next</button>
+                <!--<button v-on:click="signUpPressed">Next</button>-->
+
+            </div>
+
+
+
+            <div id="speechRecognition" class="modal">
+
+                <div class="modal-content animate">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('speechRecognition').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
+
+                    <div class="container">
+                        Please read the following paragraph:
+                        <p>aici inseram dinamic random</p>
+                        <button>I am ready!</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+    <div id="createRoom" class="modal">
+
+        <div class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('createRoom').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                formular inscriere
+            </div>
+        </div>
+    </div>
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top" style="color:#3D0011">Welcome</h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <p class="w3-large w3-center"><button onclick="document.getElementById('formularInscriere').style.display='block'">Create Profile</button></p>
+            <p class="w3-large w3-center"><button onclick="document.getElementById('createRoom').style.display='block'">Create Room</button></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
