@@ -7,6 +7,18 @@
 
     <link rel="stylesheet" href="../CSS/room.css"/>
     <script type="text/javascript" src="../JS/room.js"> </script>
+
+    <!-- Speech SDK REFERENCE -->
+    <script src="../JS/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    <!-- Speech Speech SDK Authorization token -->
+    <script src="../JS/authorizationToken.js"></script>
+
+    <!-- Speech SDK USAGE -->
+    <script src="../JS/speechUsage.js"></script>
+
+    <!-- Browser hooks -->
+    <script src="../JS/browserHooks.js"></script>
+
 </head>
 
 <body>
@@ -24,10 +36,12 @@
         </div>
     </div>
 
+    <div class="textSquare buttons">
+        <button id="speechsdkStartContinuousRecognition" style="display: inline-block">Start recording</button>
+        <button id="speechsdkStopContinuousRecognition" disabled="disabled">STOP recording</button>
+    </div>
 
-
-
-<div class = "textSquare sidenav">
+    <div class = "textSquare sidenav">
         <div class = "header" id = "peopleOnline">
             <p>People online</p>
         </div>
@@ -43,9 +57,7 @@
     </div>
 
     <div class = "textSquare textBox">
-        <div class = "header" id = "peopleSpeaking">
-
-        </div>
+        <textarea id="phraseDiv" style="display: inline-block;width:100%;height:100%"></textarea>
     </div>
 
 </body>
