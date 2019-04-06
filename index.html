@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
     <link rel="stylesheet" href="CSS/home.css"/>
+    <script type="text/javascript" src="JS/home.js"> </script>
 </head>
 
 <body>
 
-    <div id="formularInscriere" class="modal">
+    <div id="formularInscriere" class="modal" action="">
 
-        <form class="modal-content animate" action="">
+        <form class="modal-content animate" action="https://www.google.com">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('formularInscriere').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -29,7 +30,7 @@
                 <label for="mail"><b>Email</b></label><br>
                 <input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" name="mail" required><br>
 
-                <label><b>Cover</b><br>
+                <label><b>Profile Image</b><br>
                 <input type="file" accept="image/*" @change="bookImageUpload"></label><br>
 
                 <!--<label><b>First Name</b><input v-model="inpSignUp.FirstName" type="text" placeholder="Enter your first name" required></label>-->
@@ -40,8 +41,7 @@
 
                 <!--<label ><b>Email</b><input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" required></label>-->
 
-
-                <button onclick="document.getElementById('speechRecognition').style.display='block'">Next</button>
+                <button type="button" onclick="document.getElementById('speechRecognition').style.display = 'block'">Next</button>
                 <!--<button v-on:click="signUpPressed">Next</button>-->
 
             </div>
@@ -58,8 +58,15 @@
                     <div class="container">
                         Please read the following paragraph:
                         <p>aici inseram dinamic random</p>
-                        <button>I am ready!</button>
+                        <button id="readyToSpeak" type="button" >I am ready!</button>
+
                     </div>
+                    <img id="timer" src="../images/timer.gif" style="display: none;">
+
+
+
+
+
                 </div>
             </div>
 
