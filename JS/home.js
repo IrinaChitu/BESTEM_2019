@@ -2,8 +2,7 @@ function loading() {
     console.log("DO STH");
     document.getElementById('formularInscriere').action = "https://www.google.com";
     console.log(document.getElementById('formularInscriere').action);
-    location.replace("loading.html");
-
+    location.replace("HTML/loading.html");
 }
 
 window.onload = function() {
