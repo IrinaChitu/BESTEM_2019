@@ -21,7 +21,7 @@
 
 .buttons {
     top: 7%;
-    left: 3%;
+    left: 7%;
     width: 25%;
     height: 10%;
 }
@@ -159,4 +159,25 @@ img.avatar {
 
 p {
     margin: 0;
+}
+
+button {
+    height: 90%;
+    width:17%;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    margin-left: 5%;
+}
+
+#speechsdkStartContinuousRecognition {
+    background-image: url("../images/recorder.jpg");
+}
+
+#speechsdkStopContinuousRecognition {
+    background-image: url("../images/stop.png");
+}
+
+
+#exportButton {
+    background-image: url("../images/download.png");
 }
