@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room</title>
+
+    <link rel="stylesheet" href="../CSS/room.css"/>
+    <script type="text/javascript" src="../JS/room.js"> </script>
+</head>
+
+<body>
+
+    <button onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Login</button>
+
+    <div id="pop-up" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('pop-up').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../images/avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                //date despre user
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+<div class = "textSquare sidenav">
+        <div class = "header" id = "peopleOnline">
+            <!--<p>People online</p>-->
+        </div>
+
+        <div class = "person">
+            Irina
+        </div>
+        <div class = "person">
+            Maria
+        </div>
+
+    </div>
+
+    <div class = "textSquare textBox">
+        <div class = "header" id = "peopleSpeaking">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
