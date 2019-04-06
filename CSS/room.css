@@ -6,6 +6,7 @@
 }
 
 .header {
+    margin: 0;
     width: 100%;
     top: 0%;
     background-color: #00416D;
@@ -147,4 +148,8 @@ img.avatar {
     .cancelbtn {
         width: 100%;
     }
+}
+
+p {
+    margin: 0;
 }
