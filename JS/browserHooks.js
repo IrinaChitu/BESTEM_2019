@@ -95,6 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         sdkStartContinousRecognitionBtn.disabled = true;
         sdkStopContinousRecognitionBtn.disabled = false;
+
+        var downloadButton = document.getElementById('exportButton');
+        downloadButton.style.display = "none";
     });
 
     // Stops recognition and disposes of resources.
@@ -111,5 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         sdkStartContinousRecognitionBtn.disabled = false;
         sdkStopContinousRecognitionBtn.disabled = true;
+
+        var downloadButton = document.getElementById('exportButton');
+        downloadButton.style.display = "inline";
     });
 });
