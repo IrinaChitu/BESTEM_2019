@@ -10,7 +10,7 @@ function loading() {
     // document.getElementById('formularInscriere').action = "https://www.google.com";
     console.log(document.getElementById('formularInscriere').action);
     //location.replace("HTML/loading.html");
-    setTimeout(goBack, 10000); //de pus la loc pe 5000
+    setTimeout(goBack, 5000); //de pus la loc pe 5000
 }
 
 window.onload = function() {
