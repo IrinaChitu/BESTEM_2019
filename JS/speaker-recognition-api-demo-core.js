@@ -1,7 +1,9 @@
 //-- Speaker Identification methods
 // 1. Start the browser listening, listen for 15 seconds, pass the audio stream to "createProfile"
 
+
 function getProfiles() {
+	// loadProfiles();
 	return profileIds;
 }
 
@@ -27,7 +29,6 @@ function loadProfiles() {
 			profileIds.push(new Profile(name, profileId));
 		}
 
-		console.log(profileIds);
 		if (json.status == 'succeeded') {
 			clearInterval(interval);
 		}
@@ -297,7 +298,15 @@ var thingsToRead = [
 var key = "ae0dd6bd40da4f7b983018f2777c5af3";
 
 // Speaker Recognition API profile configuration - constructs to make management easier
-var Profile = class { constructor (name, profileId) { this.name = name; this.profileId = profileId;}};
+var Profile = class {
+	constructor (name, profileId) {
+		this.name = name; this.profileId = profileId;
+	}
+
+	getName() {
+		return this.name;
+	}
+};
 var profileIds = [];
 
 // (function () {

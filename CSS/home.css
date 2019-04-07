@@ -14,7 +14,15 @@ button {
     /*height: 40px;*/
 }
 
+#peopleSelection {
+    width: 150px;
+    height: 150px;
+}
 
+#peopleSelectedTextArea {
+    width: 150px;
+    height: 150px;
+}
 
 /*popUp*/
 body {font-family: Arial, Helvetica, sans-serif;}
