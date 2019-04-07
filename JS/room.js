@@ -12,8 +12,12 @@ window.onclick = function(event) {
     } else if (event.target == modal3) {
         modal.style.display = "none";
     }
-
-
-
 };
 
+window.onload = function() {
+    console.log(localStorage.getItem("roomname"));
+    console.log(parseInt(localStorage.getItem("selectedNum")));
+    for (var i = 0; i < parseInt(localStorage.getItem("selectedNum")); ++i) {
+        console.log(localStorage.getItem(i.toString()));
+    }
+}

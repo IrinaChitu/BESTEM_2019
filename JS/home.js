@@ -13,12 +13,10 @@ function loading() {
     setTimeout(goBack, 10000); //de pus la loc pe 5000
 }
 
-
-
 window.onload = function() {
     loadProfiles();
+    localStorage.setItem("selectedNum", 0);
     let users = getProfiles();
-
     let peopleSelected = document.getElementById("peopleSelectedTextArea");
 
     document.getElementById("nexButton").onclick = function() {
@@ -62,6 +60,9 @@ window.onload = function() {
 
                     let newP = document.createElement("P");
                     newP.innerText = options[i].innerHTML;
+                    
+                    localStorage.setItem(localStorage.getItem("selectedNum"), options[i].innerHTML);
+                    localStorage.setItem("selectedNum", parseInt(localStorage.getItem("selectedNum")) + 1);
 
                     peopleSelected.appendChild(newP);
                 }
@@ -71,6 +72,7 @@ window.onload = function() {
         }
 
         document.getElementById("nextButtonCreateRoom").addEventListener('click', function() {
+            localStorage.setItem("roomname", document.getElementsByName("roomname")[0].value);
             location.replace("HTML/room.html");
         });
     });
