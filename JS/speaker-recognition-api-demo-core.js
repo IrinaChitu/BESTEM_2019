@@ -1,14 +1,11 @@
 //-- Speaker Identification methods
 // 1. Start the browser listening, listen for 15 seconds, pass the audio stream to "createProfile"
 
-
 function getProfiles() {
-	// loadProfiles();
 	return profileIds;
 }
 
 function loadProfiles() {
-
 	var create = 'https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles';
 
 	var request = new XMLHttpRequest();
@@ -18,9 +15,6 @@ function loadProfiles() {
 	request.setRequestHeader('Ocp-Apim-Subscription-Key', key);
 
 	request.onload = function () {
-		// console.log('creating profile');
-		// console.log(request.responseText);
-
 		var json = JSON.parse(request.responseText);
 		for (var i = 0; i < json.length; ++i) {
 			var profileId = json[i].identificationProfileId;
@@ -38,8 +32,6 @@ function loadProfiles() {
 }
 
 function enrollNewProfile(){
-	loadProfiles();
-
 	navigator.getUserMedia({audio: true}, function(stream){
 		console.log('I\'m listening... just start talking for a few seconds...');
 		console.log('Maybe read this: \n' + thingsToRead[Math.floor(Math.random() * thingsToRead.length)]);
@@ -283,6 +275,7 @@ function BurnItAll(mode = 'identification'){
 		}
 	};
 
+		localStorage.clear();
 	request.send();
 }
 
