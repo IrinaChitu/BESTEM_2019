@@ -18,9 +18,20 @@ function loadProfiles() {
 		var json = JSON.parse(request.responseText);
 		for (var i = 0; i < json.length; ++i) {
 			var profileId = json[i].identificationProfileId;
-			var name = localStorage.getItem(profileId);
 
-			profileIds.push(new Profile(name, profileId));
+			var docRef = db.collection("Users").doc(profileId);
+
+			var name = docRef.get().then(function(doc) {
+				if (doc.exists) {
+					profileIds.push(doc.data());
+					console.log("Document data:", doc.data());
+				} else {
+					// doc.data() will be undefined in this case
+					console.log("No such document!");
+				}
+				}).catch(function(error) {
+					console.log("Error getting document:", error);
+			});
 		}
 
 		if (json.status == 'succeeded') {
@@ -137,7 +148,12 @@ function pollForEnrollment(location, profileId){
 				var lastname = document.getElementsByName("lastname")[0].value;
 				var name = firstname + " " + lastname;
 
-				localStorage.setItem(profileId, name);
+				// localStorage.setItem(profileId, name);
+
+				db.collection("Users").doc(profileId).set({
+					nume : name,
+					profileID : profileId
+				});
 				profileIds.push(new Profile(name, profileId));
 				
 				console.log(profileId + ' is now mapped to ' + name);
