@@ -23,10 +23,11 @@ function loadProfiles() {
 
 			var name = docRef.get().then(function(doc) {
 				if (doc.exists) {
-					profileIds.push(doc.data());
+					profileIds.push(new Profile(doc.data().nume, doc.data().profileID));
 					console.log("Document data:", doc.data());
 				} else {
 					// doc.data() will be undefined in this case
+					// doc.data().name = "";
 					console.log("No such document!");
 				}
 				}).catch(function(error) {
