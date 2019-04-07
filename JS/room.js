@@ -15,9 +15,25 @@ window.onclick = function(event) {
 };
 
 window.onload = function() {
-    console.log(localStorage.getItem("roomname"));
-    console.log(parseInt(localStorage.getItem("selectedNum")));
-    for (var i = 0; i < parseInt(localStorage.getItem("selectedNum")); ++i) {
-        console.log(localStorage.getItem(i.toString()));
-    }
+    db.collection("SelectedPeopleInRoom").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    });
+
+    var docRef = db.collection("SelectedPeopleInRoom").doc();
+    //
+    // var name = docRef.get().then(function(doc) {
+    //     if (doc.exists) {
+    //         console.log("Document data:", doc.data());
+    //     } else {
+    //         // doc.data() will be undefined in this case
+    //         console.log("No such document!");
+    //     }
+    // }).catch(function(error) {
+    //     console.log("Error getting document:", error);
+    // });
+
+    console.log();
 }
