@@ -48,10 +48,12 @@ function enrollNewProfile(){
 		
 		var k = 0;
 		var interval = setInterval(function() {
+			document.getElementById("readyToSpeak").innerText = 14-k;
 			console.log(k);
 			++k;
 		}, 1000);
 		setTimeout(function() {
+			document.getElementById("readyToSpeak").style.display = "none";
 			clearInterval(interval);
 		}, 15000);
 

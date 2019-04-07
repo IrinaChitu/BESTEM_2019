@@ -113,10 +113,6 @@ img.avatar {
     }
 }
 
-#formularInscriere {
-    height: 100%;
-}
-
 .containerSign {
     /*background-color: black;*/
     padding-top: 60px;
@@ -142,4 +138,14 @@ img.avatar {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+
+/*TIMER*/
+#timer {
+    margin: auto;
+}
+
+.speechRecognition > p {
+    margin: auto;
 }
