@@ -32,12 +32,24 @@ window.onload = function() {
     };
 
     document.getElementById("createRoomButton").addEventListener('click', function () {
+
+
+
+        db.collection("SelectedPeopleInRoom").get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(docc) {
+                // doc.data() is never undefined for query doc snapshots
+                // console.log(doc.id, " => ", doc.data());
+                db.collection("SelectedPeopleInRoom").doc(docc.id).delete();
+            });
+        });
+
         document.getElementById('createRoom').style.display='block';
 
         console.log("We have to add users now");
         for (let i = 0; i < users.length; ++i) {
             let newOption = document.createElement("OPTION");
-            newOption.innerText = users[i].getName();
+            newOption.innerText = users[i].nume;
+
             document.getElementById("peopleSelection").appendChild(newOption);
         }
 
@@ -61,8 +73,13 @@ window.onload = function() {
                     let newP = document.createElement("P");
                     newP.innerText = options[i].innerHTML;
                     
-                    localStorage.setItem(localStorage.getItem("selectedNum"), options[i].innerHTML);
-                    localStorage.setItem("selectedNum", parseInt(localStorage.getItem("selectedNum")) + 1);
+                    // localStorage.setItem(localStorage.getItem("selectedNum"), options[i].innerHTML);
+                    // localStorage.setItem("selectedNum", parseInt(localStorage.getItem("selectedNum")) + 1);
+
+                    db.collection("SelectedPeopleInRoom").doc(options[i].innerHTML).set({
+                        nume : options[i].innerHTML,
+                        roomname : document.getElementsByName("roomname")[0].value
+                    });
 
                     peopleSelected.appendChild(newP);
                 }
@@ -72,7 +89,10 @@ window.onload = function() {
         }
 
         document.getElementById("nextButtonCreateRoom").addEventListener('click', function() {
-            localStorage.setItem("roomname", document.getElementsByName("roomname")[0].value);
+            // db.collection("RoomNames").doc(document.getElementsByName("roomname")[0].value).set({
+            //     nume : document.getElementsByName("roomname")[0].value
+            // });
+
             location.replace("HTML/room.html");
         });
     });

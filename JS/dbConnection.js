@@ -11,8 +11,17 @@ var config = {
 
 firebase.initializeApp(config);
 var db = firebase.firestore();
-
-db.collection("Users").doc("profileID").set({
-    nume : "Ion",
-    profileID : "123-495"
-});
+//
+// db.collection("Users").doc("profileID").set({
+//     nume : "Ion",
+//     profileID : "123-495"
+// });
+//
+// db.collection("SelectedPeopleInRoom").doc("nume").set({
+//     nume : "Ion",
+//     roomName: "Room1"
+// });
+//
+// db.collection("RoomNames").doc("roomName").set({
+//     roomName: "Room 1"
+// });
