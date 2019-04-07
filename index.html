@@ -63,9 +63,9 @@
                         <button id="readyToSpeak" type="button" >I am ready!</button>
 
                     </div>
+
                     <p id="countdown" style="text-align: center"></p>
                     <img id="timer" src="images/timer.gif" style="display: none;">
-
 
                 </div>
             </div>
@@ -82,7 +82,13 @@
             </div>
 
             <div class="container">
-                formular inscriere
+                <label for="roomname"><b>Room name</b></label><br>
+                <input v-model="inpSignUp.RoomName" type="text" placeholder="Enter room name" name="roomname" required><br>
+
+                <label><b>Add people in room</b></label><br>
+                <!--Add list of clients-->
+
+                <button type="button">Next</button>
             </div>
         </div>
     </div>

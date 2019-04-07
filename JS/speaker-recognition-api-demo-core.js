@@ -1,7 +1,43 @@
 //-- Speaker Identification methods
 // 1. Start the browser listening, listen for 15 seconds, pass the audio stream to "createProfile"
+
+function getProfiles() {
+	return profileIds;
+}
+
+function loadProfiles() {
+
+	var create = 'https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles';
+
+	var request = new XMLHttpRequest();
+	request.open("GET", create, true);
+
+	request.setRequestHeader('Content-Type','application/json');
+	request.setRequestHeader('Ocp-Apim-Subscription-Key', key);
+
+	request.onload = function () {
+		// console.log('creating profile');
+		// console.log(request.responseText);
+
+		var json = JSON.parse(request.responseText);
+		for (var i = 0; i < json.length; ++i) {
+			var profileId = json[i].identificationProfileId;
+			var name = localStorage.getItem(profileId);
+
+			profileIds.push(new Profile(name, profileId));
+		}
+
+		console.log(profileIds);
+		if (json.status == 'succeeded') {
+			clearInterval(interval);
+		}
+	};
+
+	request.send();
+}
+
 function enrollNewProfile(){
-	console.log("I'm here");
+	loadProfiles();
 
 	navigator.getUserMedia({audio: true}, function(stream){
 		console.log('I\'m listening... just start talking for a few seconds...');
@@ -108,11 +144,9 @@ function pollForEnrollment(location, profileId){
 				var lastname = document.getElementsByName("lastname")[0].value;
 				var name = firstname + " " + lastname;
 
-				localStorage.setItem("playerNum", localStorage.getItem("playerNum") + 1);
-				localStorage.setItem(localStorage.getItem("playerNum"), )
+				localStorage.setItem(profileId, name);
 				profileIds.push(new Profile(name, profileId));
 				
-				console.log(profileIds);
 				console.log(profileId + ' is now mapped to ' + name);
 			}
 			else if(json.status == 'succeeded' && json.processingResult.remainingEnrollmentSpeechTime > 0) {
