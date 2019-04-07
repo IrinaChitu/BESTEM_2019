@@ -11,13 +11,17 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="JS/dbConnection.js"></script>
+
+    <script type="text/javascript" src="JS/home.js"> </script>
+    <script src="JS/speaker-recognition-api-demo-core.js"></script>
+    <script src="JS/recorder.js"></script>
 </head>
 
 <body>
 
-    <div id="formularInscriere" class="modal">
+    <div id="formularInscriere" class="modal" action="">
 
-        <form class="modal-content animate" action="">
+        <form class="modal-content animate" action="" >
             <div class="imgcontainer">
                 <span onclick="document.getElementById('formularInscriere').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -32,7 +36,7 @@
                 <label for="mail"><b>Email</b></label><br>
                 <input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" name="mail" required><br>
 
-                <label><b>Cover</b><br>
+                <label><b>Profile Image</b><br>
                 <input type="file" accept="image/*" @change="bookImageUpload"></label><br>
 
                 <!--<label><b>First Name</b><input v-model="inpSignUp.FirstName" type="text" placeholder="Enter your first name" required></label>-->
@@ -43,8 +47,7 @@
 
                 <!--<label ><b>Email</b><input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" required></label>-->
 
-
-                <button onclick="document.getElementById('speechRecognition').style.display='block'">Next</button>
+                <button id="nexButton" type="button" >Next</button>
                 <!--<button v-on:click="signUpPressed">Next</button>-->
 
             </div>
@@ -59,10 +62,15 @@
                     </div>
 
                     <div class="container">
-                        Please read the following paragraph:
-                        <p>aici inseram dinamic random</p>
-                        <button>I am ready!</button>
+                        Please read out loud the following paragraph when you are ready:
+                        <p id="textToRead"></p>
+                        <button id="readyToSpeak" type="button" >I am ready!</button>
+
                     </div>
+
+                    <p id="countdown" style="text-align: center"></p>
+                    <img id="timer" src="images/timer.gif" style="display: none;">
+
                 </div>
             </div>
 
@@ -78,7 +86,18 @@
             </div>
 
             <div class="container">
-                formular inscriere
+                <label for="roomname"><b>Room name</b></label><br>
+                <input v-model="inpSignUp.RoomName" type="text" placeholder="Enter room name" name="roomname" required><br>
+
+                <label><b>Add people in room</b></label><br>
+                <!--Add list of clients-->
+                <select id="peopleSelection" multiple>
+                </select>
+
+                <div id="peopleSelectedTextArea">
+                </div>
+
+                <button type="button" id="nextButtonCreateRoom">Next</button>
             </div>
         </div>
     </div>
@@ -89,7 +108,7 @@
             <h1 class="w3-jumbo w3-animate-top" style="color:#3D0011">Welcome</h1>
             <hr class="w3-border-grey" style="margin:auto;width:40%">
             <p class="w3-large w3-center"><button onclick="document.getElementById('formularInscriere').style.display='block'">Create Profile</button></p>
-            <p class="w3-large w3-center"><button onclick="document.getElementById('createRoom').style.display='block'">Create Room</button></p>
+            <p class="w3-large w3-center"><button id="createRoomButton">Create Room</button></p>
         </div>
     </div>
 

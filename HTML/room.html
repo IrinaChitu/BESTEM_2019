@@ -10,8 +10,11 @@
 
     <!-- Speech SDK REFERENCE -->
     <script src="../JS/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    
     <!-- Speech Speech SDK Authorization token -->
     <script src="../JS/authorizationToken.js"></script>
+    <script src="../JS/speaker-recognition-api-demo-core.js"></script>
+    <script src="../JS/recorder.js"></script>
 
     <!-- Speech SDK USAGE -->
     <script src="../JS/speechUsage.js"></script>
@@ -39,6 +42,7 @@
     </div>
 
     <div class="textSquare buttons" style="background-color: transparent">
+        <button id="homeButton" style="display: inline-block" onclick="location.replace('../index.html');"></button>
         <button id="speechsdkStartContinuousRecognition" style="display: inline-block"></button>
         <button id="speechsdkStopContinuousRecognition" disabled="disabled"></button>
         <button id="exportButton" style="display: none" ></button>
@@ -48,6 +52,9 @@
         <div class = "header" id = "peopleOnline">
             <p id = "roomNumber" align="center">Numele Camerei</p>
         </div>
+
+        
+
 
         <div class = "person">
             <p onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Irina</p>
