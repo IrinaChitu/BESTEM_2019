@@ -59,12 +59,14 @@ img.avatar {
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    /*border: 1px solid #888;*/
     width: 30%; /* Could be more or less, depending on screen size */
+    /*heihgt:100%;*/
 }
 
 /* The Close Button (x) */
 .close {
+    /*background-color: black;*/
     position: absolute;
     right: 25px;
     top: 0;
@@ -103,4 +105,33 @@ img.avatar {
     }
 }
 
-/*TIMER*/
+#formularInscriere {
+    height: 100%;
+}
+
+.containerSign {
+    /*background-color: black;*/
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.containerSign label {
+    margin-left: 10%;
+    margin-right: 10%;
+    /*margin:10%;*/
+    /*width: 80%;*/
+}
+
+.containerSign input {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 15px;
+    width: 80%;
+    height: 20%;
+}
+
+.containerSign button {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
