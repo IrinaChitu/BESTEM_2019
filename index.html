@@ -43,7 +43,7 @@
 
                 <!--<label ><b>Email</b><input v-model="inpSignUp.Email" type="text" placeholder="Enter Email" required></label>-->
 
-                <button type="button" onclick="document.getElementById('speechRecognition').style.display = 'block'">Next</button>
+                <button id="nexButton" type="button" >Next</button>
                 <!--<button v-on:click="signUpPressed">Next</button>-->
 
             </div>
@@ -58,11 +58,14 @@
                     </div>
 
                     <div class="container">
-                        Please read the following paragraph:
+                        Please read out loud the following paragraph when you are ready:
                         <p id="textToRead"></p>
                         <button id="readyToSpeak" type="button" >I am ready!</button>
+
                     </div>
+                    <p id="countdown" style="text-align: center"></p>
                     <img id="timer" src="images/timer.gif" style="display: none;">
+
 
                 </div>
             </div>
