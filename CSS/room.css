@@ -42,7 +42,7 @@ body {
 
 .buttons {
     top: 7%;
-    left: 7%;
+    left: 3.5%;
     width: 25%;
     height: 10%;
 }
@@ -207,4 +207,8 @@ button {
 
 #exportButton {
     background-image: url("../images/download.png");
+}
+
+#homeButton {
+    background-image: url("../images/home.png");
 }
