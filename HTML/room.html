@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../CSS/room.css"/>
     <script type="text/javascript" src="../JS/room.js"> </script>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
     <!-- Speech SDK REFERENCE -->
     <script src="../JS/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
     
@@ -31,18 +34,18 @@
 </head>
 
 <body>
-    <div id="pop-up" class="modal">
-        <div class="modal-content animate">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('pop-up').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="../images/avatar.png" alt="Avatar" class="avatar">
-            </div>
+    <!--<div id="pop-up" class="modal">-->
+        <!--<div class="modal-content animate">-->
+            <!--<div class="imgcontainer">-->
+                <!--<span onclick="document.getElementById('pop-up').style.display='none'" class="close" title="Close Modal">&times;</span>-->
+                <!--<img src="../images/avatar.png" alt="Avatar" class="avatar">-->
+            <!--</div>-->
 
-            <div class="container">
-                //date despre user
-            </div>
-        </div>
-    </div>
+            <!--<div class="container">-->
+                <!--//date despre user-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <div class="textSquare buttons" style="background-color: transparent">
         <button id="homeButton" style="display: inline-block" onclick="location.replace('../index.html');"></button>
@@ -53,19 +56,18 @@
 
     <div class = "textSquare sidenav">
         <div class = "header" id = "peopleOnline">
-            <p id = "roomNumber" align="center">Numele Camerei</p>
+            <p id = "roomNumber" align="center"></p>
         </div>
 
         
 
+        <!--<div class = "person">-->
+            <!--<p onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Irina</p>-->
+        <!--</div>-->
 
-        <div class = "person">
-            <p onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Irina</p>
-        </div>
-
-        <div class = "person">
-            <p onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Maria</p>
-        </div>
+        <!--<div class = "person">-->
+            <!--<p onclick="document.getElementById('pop-up').style.display='block'" style="width:auto;">Maria</p>-->
+        <!--</div>-->
 
     </div>
 
